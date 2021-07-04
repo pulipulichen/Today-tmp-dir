@@ -7,6 +7,8 @@ const trash = require('trash')
 
 const execShellCommand = require('./lib/cli/execShellCommand.js')
 
+const config = require('./config.js')
+
 function makeTodayDir () {
   let dateString = dayjs().format('YYYYMMDD')
   let todayPath = os.tmpdir() + '/' + dateString
@@ -34,7 +36,7 @@ function makeTodayDir () {
 async function linkTodayDir (todayDir) {
   // /home/pudding/[0.shortcut
   
-  let linkDir = os.homedir() + '/[0.shortcut/0.todayTmp'
+  let linkDir = config.todayTmpShortcutPath
   
   if (fs.existsSync(linkDir)) {
     await trash(linkDir)
