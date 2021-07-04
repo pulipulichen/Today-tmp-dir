@@ -1,0 +1,27 @@
+{
+  "name": "today-tmp-dir",
+  "version": "1.0.0",
+  "description": "Create a directory under tmp and link it.",
+  "main": "today-tmp.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "run": "node today-tmp.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://pulipuli.chen%40gmail.com@github.com/pulipulichen/Today-tmp-dir.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pulipulichen/Today-tmp-dir/issues"
+  },
+  "homepage": "https://github.com/pulipulichen/Today-tmp-dir#readme",
+  "dependencies": {
+    "dayjs": "^1.10.5",
+    "trash": "^7.2.0"
+  }
+}
