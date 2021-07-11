@@ -38,12 +38,20 @@ async function linkTodayDir (todayDir) {
   
   let linkDir = config.todayTmpShortcutPath
   
-  if (fs.existsSync(linkDir)) {
-    await trash(linkDir)
+  if (fs.existsSync(todayDir)) {
+    return false
   }
   
   let command = `ln -s "${todayDir}" "${linkDir}"` 
-  await execShellCommand(command)
+  
+  try {
+    await execShellCommand(command)
+  }
+  catch (e) {
+    console.log(`rm "${linkDir}"`)
+    await execShellCommand(`rm "${linkDir}"`)
+    await execShellCommand(command)
+  }
 }
 
 let todayTmp = makeTodayDir()
