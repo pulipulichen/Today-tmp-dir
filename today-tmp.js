@@ -10,7 +10,8 @@ const execShellCommand = require('./lib/cli/execShellCommand.js')
 const config = require('./config.js')
 
 function makeTodayDir () {
-  let dateString = dayjs().format('YYYYMMDD')
+  //let dateString = dayjs().format('YYYYMMDD')
+  let dateString = '[0.today'
   let todayPath = os.tmpdir() + '/' + dateString
 
   if (fs.existsSync(todayPath) === true) {
